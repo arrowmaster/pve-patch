@@ -10,7 +10,6 @@ function pve_patch() {
   echo $FREE_REPO_LINE > $FREE_REPO_LIST
   [ -f $ENTERPRISE_REPO_LIST ] && mv $ENTERPRISE_REPO_LIST $ENTERPRISE_REPO_LIST~
   sed -i.bak "s/data.status !== 'Active'/false/g" /usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js
-  cp --backup /usr/share/pve-patch/images/* /usr/share/pve-manager/images/
 }
 
 pve_patch
